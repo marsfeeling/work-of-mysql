@@ -79,6 +79,22 @@ create table t_dept(
  
  ### 5.增加字段和删除字段
  #### （1）在表的最后增加字段
+ ```sql
+ ALTER TABLE t_dept1
+  ADD Tel VARCHAR(20); 
+  ```
+  
+  ##### 执行结果
+  
+  #### （2）在表的最前面增加字段
+  ```sql
+   ALTER TABLE t_dept1
+    ADD Aname VARCHAR(10) FIRST;
+   ```
+   
+   
+   ##### 
+  
  
 
 
