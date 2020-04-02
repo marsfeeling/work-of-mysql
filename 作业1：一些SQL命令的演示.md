@@ -71,6 +71,11 @@ create table t_dept(
  
  ### 4.修改表名
  ```sql
+  alter table t_dept RENAME t_dept1;
+  ```
+  
+  #### 执行结果
+ 
  
 
 
