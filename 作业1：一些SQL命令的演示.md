@@ -91,15 +91,107 @@ create table t_dept(
    ALTER TABLE t_dept1
     ADD Aname VARCHAR(10) FIRST;
    ```
-   
-   
-   ##### 
   
+  ##### 执行结果
+   
+   ####  (3)在指定位置增加字段
+   ```sql
+   ALTER TABLE t_dept1 
+	 	    ADD Bname VARCHAR(10)
+		       	AFTER dname; # 在指定字段位置dname后增加字段
+   ```
+  
+   ##### 执行结果
+   
+   #### （4）删除字段
+   ```sql
+   ALTER TABLE t_dept1
+            DROP Bname;
+ ```
  
+ ##### 执行结果
+ 
+ ### 6.修改字段
+ 
+ #### （1）修改字段数据类型
+ ```sql
+ ALTER TABLE t_dept1 
+		MODIFY Tel INT;
+  ```
+  
+  ##### 执行结果
+  
+  
+  #### （2）同时修改字段名字和数据类型
+```sql
+ALTER TABLE t_dept1 
+		CHANGE dname Dname VARCHAR(10);
+ ```
+ 
+ ##### 执行结果
+ 
+ 
+ #### （3）修改字段顺序
+```sql
+ALTER TABLE t_dept1 
+		MODIFY  deptno INT(11) AFTER loc;
+```
+
+##### 执行结果
 
 
+## 四.操作表的约束
+```sql
+deptno INT NOT NULL,  # 非空约束
+	dname VARCHAR(20) DEFAULT 'Petter', 
+	cname VARCHAR(20) UNIQUE,	#唯一性约束
+	loc VARCHAR(40)， 
+	number INT PRIMARY KEY AUTO_INCREMENT	#设置字段自动增加
+	); 
+ ```
+ 
+ ### 执行结果
+ 
+ 
+ 
+ ## 五.数据的操作
+### 1.插入数据记录
+```sql
+INSERT INTO t_dept_1( deptno,dname,loc)
+		values(10,'Xiaotong','Chongqing');
+	INSERT INTO t_dept_1(deptno,Dname,loc)
+		values(20,'Xiaotan','Chongqing');
+```
+#### 执行结果
 
 
+### 2.同时插入多条数据记录
+```sql
+INSERT INTO t_dept_1( deptno,dname,loc)
+values(10,'Xiaoyang','Chongqing'),
+          (20,'Xiaomei','Hangzhou'),
+          (10,'Xiaoxin','Chengdu');
+```
+
+#### 执行结果
+
+### 3.将一个表的记录插入另一个表中
+```sql
+create table t_dept_2 (
+    deptno INT,
+	dname  VARCHAR(20),
+	loc    VARCHAR(40)
+);
+INSERT INTO t_dept_2( deptno,dname,loc)
+values(20,'Yanyang','Chongqing'),
+          (20,'Xiye','Hangzhou');
+INSERT INTO t_dept_1(deptno,dname,loc)
+SELECT deptno,dname,loc		
+ FROM t_dept_2;
+SELECT * FROM t_dept_1;
+```
+
+#### 执行结果
 
 
 
