@@ -26,7 +26,8 @@ on t1.sal>t2.sal and (t2.ename='SMITH');
 #### 代码
 ```sql
 select t1.deptno,t1.empno,t1.ename,t1.job,t1.MGR,t1.Hiredate,t1.sal,t1.comm          
-from t_employee2 t1 inner join t_employee2 t2 on (t1.sal = t2.sal and (t2.ename='SMITH')) AND (t1.job = t2.job and (t2.ename='SMITH'));
+from t_employee2 t1 inner join t_employee2 t2 
+on (t1.sal = t2.sal and (t2.ename='SMITH')) AND (t1.job = t2.job and (t2.ename='SMITH'));
 ```
 
 ##### 执行结果与原query对比
