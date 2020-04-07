@@ -31,7 +31,7 @@ on (t1.sal = t2.sal and (t2.ename='SMITH')) AND (t1.job = t2.job and (t2.ename='
 ```
 
 ##### 执行结果与原query对比
-![](
+![](https://github.com/ty0816/work/blob/master/images/%E7%AC%AC%E4%BA%8C%E4%B8%AAquery.png)
 
 
 
