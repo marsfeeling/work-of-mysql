@@ -19,7 +19,7 @@ on t1.sal>t2.sal and (t2.ename='SMITH');
 ```
 
 ##### 执行结果与原query对比
-
+![](https://github.com/ty0816/work/blob/master/images/%E7%AC%AC%E4%B8%80%E4%B8%AAquery.png)
 
 
 ### 2.第二个query用join写（第二个query再据我分析就是选出工资和工作与名叫SMITH的员工的表格）
@@ -31,7 +31,7 @@ on (t1.sal = t2.sal and (t2.ename='SMITH')) AND (t1.job = t2.job and (t2.ename='
 ```
 
 ##### 执行结果与原query对比
-
+![](
 
 
 
